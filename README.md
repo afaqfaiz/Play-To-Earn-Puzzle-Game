@@ -1,2 +1,3 @@
 # Play-To-Earn-Puzzle-Game
-Play-To-Earn-Puzzle Game is a sudoku game, where is winner is rewarded with NFTs and cryto
+<h1> Play-To-Earn-Puzzle Game is a sudoku game.</p>
+<p>On successfuly solving th puzzle game where  winner is rewarded with NFTs and cryto on the difficulty basis. </p>
