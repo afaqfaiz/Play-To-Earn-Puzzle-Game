@@ -8,27 +8,74 @@
   <style>
     body {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       height: 100vh;
       font-family: Arial, sans-serif;
-      background-color: rgba(10, 9, 9, 0.888);
+      background-color: #040404df;
     }
+    .loader {
+      display: none;
+      flex-direction: row;
+      justify-content: center;
+      gap: 5px;
+    }
+    .loader div {
+      width: 10px;
+      height: 10px;
+      background-color: #b1cff0;
+      border-radius: 50%;
+      animation: spin 1s infinite;
+    }
+    .loader div:nth-child(1) { animation-delay: 0s; }
+    .loader div:nth-child(2) { animation-delay: 0.2s; }
+    .loader div:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes spin {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .tick {
+      display: none;
+      font-size: 40px;
+      color: rgb(5, 255, 5);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     button {
       padding: 10px 20px;
       font-size: 18px;
-      background-color: white;
-      color: black;
+      background-color: #dfdad2;
+      color: rgb(7, 7, 7);
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #937b8182;
+      background-color: #e68900;
+    }
+    #statusText{
+        color:bisque;
     }
   </style>
 </head>
 <body>
+  <div id="status">
+    <div id="loader" class="loader">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="tickAnimation" class="tick">✔</div>
+    <p id="statusText">Click the button to connect to MetaMask</p>
+  </div>
   <button onclick="connectMetaMask()">Connect MetaMask</button>
 </body>
 </html>
